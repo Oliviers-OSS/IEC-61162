@@ -1,0 +1,13 @@
+#!/bin/sh
+
+for t in `find . -name "*_test" | grep -v .libs` ; do
+  echo "Running $t ..."
+  ./$t #|| exit 1
+  echo "--------------------------------------------"
+done
+
+for t in `find . -name "*_tests" | grep -v .libs` ; do
+  echo "Running $t ..."
+  ./$t #|| exit 1
+  echo "--------------------------------------------"
+done

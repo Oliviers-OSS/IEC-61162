@@ -1,0 +1,11 @@
+VERS_0.0 {
+    global:
+    extern"C++" {
+       *IEC61162::Message;
+       *IEC61162::AISMessage*;
+       *IEC61162::AIVDMMessage*;
+       *IEC61162::AIVDOMessage*;
+       IEC61162::*
+    };    
+    local: *;
+};

@@ -1,0 +1,25 @@
+#ifndef _AIS_PUBLISHER_IDL_
+#define _AIS_PUBLISHER_IDL_
+
+module AIS {	
+	typedef sequence<string> Labels;
+	typedef sequence<any> ShipData;
+	typedef sequence<ShipData> ShipsData;	
+	struct VesselsData {
+		Labels names;
+		ShipsData data;
+	};		
+        
+	interface Map {				
+		exception FilterError {
+	       long code; 
+	       string message;
+	    };
+		void setFilter(in string query) raises(FilterError);
+		void getFilter(out string query) raises(FilterError);
+		attribute unsigned long maxAnswerSize;
+		void getShips(out VesselsData vessels) raises(FilterError);
+	}; 	
+};
+
+#endif //_AIS_PUBLISHER_IDL_

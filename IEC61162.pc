@@ -1,0 +1,12 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: DbgFlags
+Description: IEC 61162 messages parser library
+Version: 0.0
+Requires: 
+Libs: -L${libdir} -lIEC61162
+Libs.private: -lrt -lm
+Cflags: -I${includedir}
